@@ -1,4 +1,4 @@
-package com.jhstudy.springboot.web.web.dto;
+package com.jhstudy.springboot.web.dto;
 
 import com.jhstudy.springboot.web.dto.HelloResponseDto;
 import org.junit.Test;
