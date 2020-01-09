@@ -1,0 +1,31 @@
+package com.jhstudy.springboot.web.dto;
+
+import com.jhstudy.springboot.domain.posts.Posts;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Getter
+@NoArgsConstructor
+public class PostsSaveRequestDto {
+    private String title;
+    private String content;
+    private String author;
+
+    @Builder
+    public PostsSaveRequestDto(String title, String content, String author) {
+        this.title = title;
+        this.content = content;
+        this.author = author;
+    }
+
+    //dto => entity 매핑 메서드
+    public Posts toEntity() {
+        return Posts.builder()
+                .title(title)
+                .content(content)
+                .author(author)
+                .build();
+    }
+}
