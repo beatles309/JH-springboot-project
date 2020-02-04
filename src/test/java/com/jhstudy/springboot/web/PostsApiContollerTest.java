@@ -64,7 +64,11 @@ public class PostsApiContollerTest {
         String title = "바뀐 타이틀";
         String content = "바뀐 내용";
         String author = "쥐냥쥐냥";
-        Posts posts = postsRepository.save(Posts.builder().title("타이틀").content("내용").author("쥐냥이").build());
+        Posts posts = postsRepository.save(Posts.builder()
+                .title("타이틀")
+                .content("내용")
+                .author("쥐냥이")
+                .build());
 
         String url ="http://localhost:" + port + "/api/v1/posts/" + posts.getId();
 
